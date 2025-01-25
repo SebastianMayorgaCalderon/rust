@@ -1,13 +1,9 @@
-fn main() {
-    let text: String=my_function(1, "jhon");
-    let text2: String=my_function2(2, "mario");
-    println!("{}", text);
-    println!("{}", text2);
-}
+mod func;
+use crate::func::{tuple_function, array_function};
 
-fn my_function(param1:i32, param2: &str) -> String{
-    format!("hello {} {}", param1, param2)
-}
-fn my_function2(param1:i32, param2: &str) -> String{
-    return format!("hello {} {}", param1, param2);
+fn main() {
+   let tuple_result: (i32, i32) = tuple_function(33,44);
+   println!("tuple result: 0-{} 1-{}", tuple_result.0, tuple_result.1);
+   let array_result = array_function(tuple_result);
+   println!("array result: [{},{}]", array_result[0], array_result[1]);
 }
